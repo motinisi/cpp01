@@ -1,19 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nisi <nisi@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 16:56:04 by nisi              #+#    #+#             */
-/*   Updated: 2025/04/16 16:56:32 by nisi             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Zombie.hpp"
 
-void randomChump(std::string name)
-{
-    Zombie zom(name);
-    zom.announce();
+void randomChump(std::string name){
+	Zombie zombie(name);
+	zombie.announce();
 }
