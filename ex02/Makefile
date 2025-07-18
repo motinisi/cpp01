@@ -1,17 +1,14 @@
-NAME = ex01
+NAME =  ex02
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
-HEADER = Zombie.hpp
 
 all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
-%.o: %.cpp $(HEADER)
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	$(RM) $(OBJS)
