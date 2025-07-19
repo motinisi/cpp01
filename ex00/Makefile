@@ -6,7 +6,7 @@
 #    By: timanish <timanish@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/16 17:02:03 by nisi              #+#    #+#              #
-#    Updated: 2025/07/18 18:53:49 by timanish         ###   ########.fr        #
+#    Updated: 2025/07/19 15:06:54 by timanish         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,17 +18,16 @@ SRCS = main.cpp \
 		newZombie.cpp \
 		randomChump.cpp
 OBJS = $(SRCS:.cpp=.o)
-RM = rm -f
-HEADER = Zombie.hpp
 
 all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
-%.o: %.cpp $(HEADER)
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	$(RM) $(OBJS)
+	rm -rf $(OBJS)
 fclean: clean
-	$(RM) $(NAME)
+	rm -rf $(NAME)
 re: fclean all
+
 .PHONY: all clean fclean re

@@ -5,17 +5,16 @@ SRCS = main.cpp \
 		Zombie.cpp \
 		zombieHorde.cpp
 OBJS = $(SRCS:.cpp=.o)
-RM = rm -f
-HEADER = Zombie.hpp
 
 all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
-%.o: %.cpp $(HEADER)
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	$(RM) $(OBJS)
+	rm -rf $(OBJS)
 fclean: clean
-	$(RM) $(NAME)
+	rm -rf $(NAME)
 re: fclean all
+
 .PHONY: all clean fclean re
