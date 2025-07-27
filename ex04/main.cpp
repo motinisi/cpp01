@@ -9,6 +9,11 @@ int main(int argc, char **argv){
 
 	std::string s1 = argv[2];
 	std::string s2 = argv[3];
+
+	if (s1.empty()) {
+	std::cerr << "Error: s1 must not be empty" << std::endl;
+	return 1;
+	}
 	
 	std::ifstream inputFile(argv[1]);
 	if(!inputFile){

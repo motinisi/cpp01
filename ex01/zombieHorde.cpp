@@ -1,4 +1,11 @@
 #include "Zombie.hpp"
+#include <sstream>
+
+std::string ft_toString(int num){
+	std::stringstream ss;
+	ss << num;
+	return ss.str();
+}
 
 Zombie* zombieHorde(int N, std::string name) {
 	if (N <= 0) {
@@ -7,7 +14,7 @@ Zombie* zombieHorde(int N, std::string name) {
 	}
 	Zombie* horde = new Zombie[N];
 	for (int i = 0; i < N; ++i) {
-		horde[i].setName(name + static_cast<char>(i + 1 + '0'));
+		horde[i].setName(name + ft_toString(i + 1));
 	}
 	return horde;
 }
